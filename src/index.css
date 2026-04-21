@@ -1,13 +1,147 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap");
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1 {
+  text-transform: uppercase;
+  font-family: "DM Mono", monospace;
+  font-weight: 900;
+  font-size: clamp(3rem, 10vw, 15rem);
+  line-height: 0.9;
+  letter-spacing: -4%;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "DM Mono", monospace;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #000;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10rem;
+  width: 100%;
+  
+}
+
+.nav-logo a {
+  text-transform: uppercase;
+  font-family: "DM Mono", monospace;
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: -2%;
+}
+
+.nav-links {
+  display: flex;
+  gap: 4rem;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  padding: 2rem;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero .header {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero h1:nth-child(2) {
+  align-self: flex-end;
+}
+.hero h1:nth-child(3) {
+  align-self: center;
+}
+
+#fluid {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 100;
+  mix-blend-mode: difference;
+}
+
+
+@media (max-width: 1000px) {
+  .nav-links {
+    align-items: flex-end;
+    flex-direction: column;
+
+    gap: 0;
+  }
+
+  .hero h1 {
+    align-self: center !important;
+    text-align: center;
+  }
+  
+}
+
+#fluid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero, nav {
+  position: relative;
+  z-index: 2;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#fluid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: black; /* important */
+}
+
+.hero, nav {
+  position: relative;
+  z-index: 2;
 }
